@@ -73,7 +73,9 @@ export default class extends Extension {
     }));
   }
 
-  async watch(url, id) {
+  async watch(url) {
+    const detailInfo = await this.detail(url);
+    const id = detailInfo.id;
     const quality = await this.getSetting("prefQuality");
     const res = await this.req(`/watch/${id}?ep=${url}`);
     const prefQuality = res.sources.find(source => source.quality === quality);

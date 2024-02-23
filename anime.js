@@ -77,7 +77,7 @@ export default class extends Extension {
     const detailInfo = await this.detail(url);
     const id = detailInfo.id;
     const quality = await this.getSetting("prefQuality");
-    const res = await this.req(`/watch/9078?ep=${url}`);
+    const res = await this.req(`/watch/9078&ep=${url}`);
     const prefQuality = res.sources.find(source => source.quality === quality);
 
     if (prefQuality) {

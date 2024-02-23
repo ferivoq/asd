@@ -48,6 +48,7 @@ export default class extends Extension {
   async detail(url) {
     const res = await this.req(`/info/${url}`);
     return {
+      id: res.id,
       title: res.title,
       cover: res.imageUrl,
       desc: res.description,
@@ -72,9 +73,9 @@ export default class extends Extension {
     }));
   }
 
-  async watch(url) {
+  async watch(url, id) {
     const quality = await this.getSetting("prefQuality");
-    const res = await this.req(`/watch/${url}`);
+    const res = await this.req(`/watch/${id}?ep=${url}`);
     const prefQuality = res.sources.find(source => source.quality === quality);
 
     if (prefQuality) {

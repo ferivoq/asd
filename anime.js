@@ -66,7 +66,7 @@ export default class extends Extension {
   }
 
   async search(kw, page) {
-    const res = await this.req(`/search/${kw}?page=${page}`);
+    const res = await this.req(`/search?q=${kw}&page=${page}`);
     return res.results.map((item) => ({
       title: item.title,
       url: item.id,

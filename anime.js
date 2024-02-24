@@ -57,7 +57,7 @@ export default class extends Extension {
           title: "Ep",
           urls: res.episodes.map((item) => ({
             name: `Episode ${item.number}`,
-            url: `/watch/${item.id}&ep=${item.animeid}`,
+            url: `/watch/${item.animeid}&ep=${item.id}`,
             animeid: item.animeid,
           })),
         },

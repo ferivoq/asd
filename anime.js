@@ -4,10 +4,10 @@
 // @author       FeriVOQ
 // @lang         hu
 // @license      MIT
-// @icon         https://play-lh.googleusercontent.com/MaGEiAEhNHAJXcXKzqTNgxqRmhuKB1rCUgb15UrN_mWUNRnLpO5T1qja64oRasO7mn0
+// @icon         https://i.imgur.com/ZST5sUd.png
 // @package      animedrive.anime
 // @type         bangumi
-// @webSite      https://animedrivescrapperferi.vercel.app
+// @webSite      https://animedrive.hu/
 // ==/MiruExtension==
 
 export default class extends Extension {

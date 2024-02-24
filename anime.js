@@ -25,7 +25,7 @@ export default class extends Extension {
       key: "animedriveApi",
       type: "input",
       description: "API URL",
-      defaultValue: "http://127.0.0.1:5000",
+      defaultValue: "http://192.168.0.185:5000",
     });
     this.registerSetting({
       title: "Preferred quality",

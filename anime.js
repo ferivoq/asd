@@ -57,7 +57,7 @@ export default class extends Extension {
           title: "Ep",
           urls: res.episodes.map((item) => ({
             name: `Episode ${item.number}`,
-            url: item.id,
+            url: `/watch/${item.id}&ep=${item.animeid}`,
             animeid: item.animeid,
           })),
         },
@@ -74,9 +74,9 @@ export default class extends Extension {
     }));
   }
 
-  async watch(url, animeid) {
+  async watch(url) {
     const quality = await this.getSetting("prefQuality");
-    const res = await this.req(`/watch/${animeid}&ep=${url}`);
+    const res = await this.req(url);
     const prefQuality = res.sources.find(source => source.quality === quality);
 
     if (prefQuality) {

@@ -69,7 +69,7 @@ export default class extends Extension {
     const res = await this.req(`/search?q=${kw}&page=${page}`);
     return res.results.map((item) => ({
       title: item.title,
-      url: item.id,
+      url: item.id.toString(),
       cover: item.image,
     }));
   }

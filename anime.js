@@ -1,6 +1,6 @@
 // ==MiruExtension==
 // @name         AnimeDrive
-// @version      v0.0.2
+// @version      v1.0.0
 // @author       FeriVOQ, Hun0r
 // @lang         hu
 // @license      MIT
@@ -75,7 +75,7 @@ export default class extends Extension {
   }
 
   async watch(url) {
-    const res = await this.req(`/episode/${url}`);
+    const res = await this.req(`${url}`);
 
     const getQualityUrl = async (quality) => {
       const qualitySource = res.sources.find(source => source.quality === quality);

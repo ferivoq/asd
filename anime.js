@@ -72,7 +72,7 @@ export default class extends Extension {
 
     return {
       type: "mp4",
-      url: res.stream.multi.main.url,
+      url: res.sources.multi.url,
     };
   }
 }

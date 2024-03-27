@@ -1,6 +1,6 @@
 // ==MiruExtension==
 // @name         AnimeDrive
-// @version      v0.0.1
+// @version      v0.0.2
 // @author       FeriVOQ, Hun0r
 // @lang         hu
 // @license      MIT

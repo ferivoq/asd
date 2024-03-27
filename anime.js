@@ -27,13 +27,6 @@ export default class extends Extension {
       description: "API URL",
       defaultValue: "http://192.168.0.185:5000",
     });
-    this.registerSetting({
-      title: "Preferred quality",
-      key: "prefQuality",
-      type: "input",
-      description: "Choose between 360p/480p/720p/1080p",
-      defaultValue: "480p",
-    });
   }
 
   async latest(page) {
@@ -75,38 +68,11 @@ export default class extends Extension {
   }
 
   async watch(url) {
-    const res = await this.req(`${url}`);
-
-    const getQualityUrl = async (quality) => {
-      const qualitySource = res.sources.find(source => source.quality === quality);
-      if (qualitySource) {
-        return qualitySource.url;
-      } else {
-        return res.sources[res.sources.length - 1].url;
-      }
-    };
-
-    const prefQuality = await this.getSetting("prefQuality");
-    const initialUrl = await getQualityUrl(prefQuality);
+    const res = await this.req(url);
 
     return {
       type: "mp4",
-      url: initialUrl,
-      controls: [
-        {
-          name: "quality",
-          html: "Quality",
-          position: "right",
-          selector: [...new Set(res.sources.map(item => item.quality))].map(quality => ({
-            name: quality,
-            html: quality,
-          })),
-          onSelect: async function (quality) {
-            const qualityUrl = await getQualityUrl(quality.name);
-            this.switchUrl(qualityUrl);
-          },
-        },
-      ],
+      url: res.stream.multi.main.url,
     };
   }
 }

@@ -4,7 +4,7 @@
 // @author       FeriVOQ, Hun0r
 // @lang         hu
 // @license      MIT
-// @icon         https://i.imgur.com/ZST5sUd.png
+// @icon         https://cdn.discordapp.com/icons/702098578251841577/be50b5dbcb30bd99512b6df29284db0c.webp?size=96
 // @package      animedrive.anime
 // @type         bangumi
 // @webSite      https://animedrive.hu/
